@@ -379,11 +379,11 @@
 
         // Notification system
         const notifications = [
-            {key: 'trillion', threshold: 1e12, resource: 'cosmicEnergy', msg: '🌌 First trillion energy!'},
-            {key: '100trillion', threshold: 1e14, resource: 'cosmicEnergy', msg: '🔬 100 trillion! Quantum unlocked!'},
-            {key: 'scientific', threshold: 1e15, resource: 'cosmicEnergy', msg: '🔬 Scientific notation enabled!'},
-            {key: 'ultimate', threshold: 1e40, resource: 'cosmicEnergy', msg: '🌟 ULTIMATE: 1e40 achieved!'},
-            {key: 'quantumSci', threshold: 1e15, resource: 'quantumLeaps', msg: '🔬 Quantum scientific notation!'}
+            {key: 'trillion', threshold: 1e12, resource: 'cosmicEnergy', msg: '🌌 First trillion energy'},
+            {key: '100trillion', threshold: 1e14, resource: 'cosmicEnergy', msg: '🔬 100 trillion Quantum unlocked'},
+            {key: 'scientific', threshold: 1e15, resource: 'cosmicEnergy', msg: '🔬 Scientific notation enabled'},
+            {key: 'ultimate', threshold: 1e40, resource: 'cosmicEnergy', msg: '🌟 ULTIMATE: 1e40 achieved'},
+            {key: 'quantumSci', threshold: 1e15, resource: 'quantumLeaps', msg: '🔬 Quantum scientific notation'}
         ];
 
         // Format numbers
@@ -557,7 +557,7 @@
             }
 
             if (type === 'stellar') {
-                if (s.cosmicEnergy < 500000) return showNotification('Need 500K energy!');
+                if (s.cosmicEnergy < 500000) return showNotification('Need 500K energy');
                 const gain = calcDarkMatterGain();
                 s.darkMatter += gain;
                 s.cosmicEnergy = 1; s.energyGeneration = 1; s.universeAge = 0;
@@ -566,7 +566,7 @@
             }
 
             if (type === 'quantum') {
-                if (s.darkMatter < 50000) return showNotification('Need 50K dark matter!');
+                if (s.darkMatter < 50000) return showNotification('Need 50K dark matter');
                 const gain = calcQuantumLeapGain();
                 s.quantumLeaps += gain;
                 s.totalQuantumLeaps += gain;
@@ -763,7 +763,7 @@
                     if (gameState.upgrades.thisCanBeGenerated) gameState.dust += 0.001 * offlineSec;
                     
                     const hrs = Math.floor(offlineTime/3600000), mins = Math.floor((offlineTime%3600000)/60000);
-                    showNotification(`Welcome back! Offline ${hrs}h ${mins}m. Gained ${formatNumber(offlineEnergy)} Energy`);
+                    showNotification(`Welcome back Offline ${hrs}h ${mins}m. Gained ${formatNumber(offlineEnergy)} Energy`);
                 }
                 
                 updateDisplay();
